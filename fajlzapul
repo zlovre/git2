@@ -1,0 +1,143 @@
+BASH Programming
+30 Bash Script Examples
+4 years agoby Fahmida Yesmin
+
+Bash scripts can be used for various purposes, such as executing a shell command, running multiple commands together, customizing administrative tasks, performing task automation etc. So knowledge of bash programming basics is important for every Linux user. This article will help you to get the basic idea on bash programming. Most of the common operations of bash scripting are explained with very simple examples here.
+The following topics of bash programming are covered in this article.
+
+Hello World
+Echo Command
+Comments
+Multi-line comment
+While Loop
+For Loop
+Get User Input
+If statement
+And Condition if statement
+Or Condition if statement
+Else if and else condition
+Case Condition
+Get Arguments from Command Line 
+Get arguments from command line with names
+Combine two strings in a variable
+Get Substring of Strings
+Add 2 numbers into a variable
+Create a Function
+Use Function Parameters
+Pass Return Value from Script
+Make directory
+Make directory by checking existence
+Read a file
+Delete a File
+Append to file
+Test if File Exists
+Send Email Example
+Get Parse Current Date
+Wait Command
+Sleep Command
+Create and Execute First BASH Program:
+You can run bash script from the terminal or by executing any bash file. Run the following command from the terminal to execute a very simple bash statement. The output of the command will be ‘Hello World’.
+
+
+AD
+$ echo "Hello World"
+
+Open any editor to create a bash file. Here, nano editor is used to create the file and filename is set as ‘First.sh’
+
+
+AD
+$ nano First.sh
+Add the following bash script to the file and save the file.
+
+#!/bin/bash
+echo "Hello World"
+
+You can run bash file by two ways. One way is by using bash command and another is by setting execute permission to bash file and run the file. Both ways are shown here.
+
+
+AD
+$ bash First.sh
+Or,
+
+$ chmod a+x First.sh
+$ ./First.sh
+
+
+AD
+Go to top
+
+Use of echo command:
+You can use echo command with various options. Some useful options are mentioned in the following example. When you use ‘echo’ command without any option then a newline is added by default. ‘-n’ option is used to print any text without new line and ‘-e’ option is used to remove backslash characters from the output. Create a new bash file with a name, ‘echo_example.sh’ and add the following script.
+
+#!/bin/bash
+echo "Printing text with newline"
+echo -n "Printing text without newline"
+echo -e "\nRemoving \t backslash \t characters\n"
+Run the file with bash command.
+
+
+AD
+$ bash echo_example.sh
+
+Go to top
+
+
+AD
+
+Use of comment:
+‘#’ symbol is used to add single line comment in bash script. Create a new file named ‘comment_example.sh’ and add the following script with single line comment.
+
+#!/bin/bash
+
+# Add two numeric value
+((sum=25+35))
+
+#Print the result
+echo $sum
+Run the file with bash command.
+
+$ bash comment_example.sh
+
+
+AD
+Go to top
+
+Use of Multi-line comment:
+You can use multi line comment in bash in various ways. A simple way is shown in the following example. Create a new bash named, ‘multiline-comment.sh’ and add the following script. Here, ‘:’ and “ ’ ” symbols are used to add multiline comment in bash script. This following script will calculate the square of 5.
+
+#!/bin/bash
+: '
+The following script calculates
+the square value of the number, 5.
+'
+((area=5*5))
+echo $area
+Run the file with bash command.
+
+$ bash multiline-comment.sh
+
+You can check the following link to know more about the use of bash comment.
+
+
+AD
+https://linuxhint.com/bash_comments/
+
+Go to top
+
+Using While Loop:
+Create a bash file with the name, ‘while_example.sh’, to know the use of while loop. In the example, while loop will iterate for 5 times. The value of count variable will increment by 1 in each step. When the value of count variable will 5 then the while loop will terminate.
+
+
+AD
+#!/bin/bash
+valid=true
+count=1
+while [ $valid ]
+do
+echo $count
+if [ $count -eq 5 ];
+then
+break
+fi
+((count++))
+done
